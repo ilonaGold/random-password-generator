@@ -161,3 +161,30 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+/* light theme */
+
+.container.light-theme {
+  background-color: #ecfdf5;
+}
+
+.text-accent.light-theme {
+  color: #2b283a;
+}
+
+.text-green.light-theme {
+  color: #10b981;
+}
+
+.subtitle.light-theme {
+  color: #6b7280;
+}
+
+.flex-right.light-theme {
+  color: #6b7280;
+}
+
+.generator-module.light-theme {
+  border-bottom: 1px solid #d5d4d8;
+}
