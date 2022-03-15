@@ -97,3 +97,67 @@ label {
   border-radius: 6px;
   margin-top: 27px;
 }
+
+/* toggle switch */
+
+.toggler {
+  position: relative;
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  width: 5.625em;
+  height: 2.125em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1c1c1c;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.75em;
+  width: 1.75em;
+  left: 2px;
+  bottom: 3px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #273549;
+  position: absolute;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(56px);
+  -ms-transform: translateX(56px);
+  transform: translateX(56px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
