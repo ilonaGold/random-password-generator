@@ -5,7 +5,7 @@ let chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
              "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "!", "@",
              "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[",
              "]", "{", "}", "|", ";", ":", ",", ".", "/", "?"  
-             ]
+            ]
 
 const pwdLength = document.getElementById("pwd-length");
 const btn = document.getElementById("btn");
@@ -49,6 +49,40 @@ function generatePassword() {
     pwd4.textContent = pass4;
     }
 }    
+
+
+/* light theme */
+
+const toggle = document.getElementById('toggle');
+
+const container = document.querySelector('.container');
+const accent = document.querySelector('.text-accent');
+const green = document.querySelector('.text-green');
+const subtitle = document.querySelector('.subtitle');
+const lengthSave = document.querySelector('.flex-right');
+const generator = document.querySelector('.generator-module');
+
+
+toggle.addEventListener('input', e => {
+    const isChecked = e.target.checked;
+    
+    if(isChecked) {
+        container.classList.add('light-theme');
+        accent.classList.add('light-theme');
+        green.classList.add('light-theme');
+        subtitle.classList.add('light-theme');
+        lengthSave.classList.add('light-theme');
+        generator.classList.add('light-theme');
+    } else {
+        container.classList.remove('light-theme');
+        accent.classList.remove('light-theme');
+        green.classList.remove('light-theme');
+        subtitle.classList.remove('light-theme');
+        lengthSave.classList.remove('light-theme');
+        generator.classList.remove('light-theme');
+    }
+});
+
 
 
 
