@@ -50,10 +50,11 @@ body {
 
 button {
   background-color: #10b981;
+  font-size: 16px;
   font-weight: 500px;
   color: #ffffff;
   border: none;
-  padding: 15px 30px;
+  padding: 15px 25px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   margin-bottom: 35px;
@@ -70,7 +71,10 @@ button {
 }
 
 .to-clipboard {
-  margin: 10px 0;
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-end;
+  height: 30px;
 }
 
 label {
@@ -215,4 +219,32 @@ input[type="range"]::-webkit-slider-runnable-track {
   box-shadow: none;
   border: none;
   background: transparent;
+}
+
+/* custom checkbox */
+
+input[type="checkbox"] {
+  width: 1.3em;
+  height: 1.3em;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #10b981;
+}
+
+input[type="checkbox"]::before {
+  content: "✔";
+  color: #ffffff;
+  font-size: 18px;
+  position: relative;
+  /* padding: 1px 3px;
+  margin-top: -5px; */
+  opacity: 0;
+  outline: none;
+  background-color: #10b981;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
 }
