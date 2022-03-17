@@ -162,7 +162,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
 /* light theme */
 
 .container.light-theme {
@@ -187,4 +186,33 @@ input:checked + .slider:before {
 
 .generator-module.light-theme {
   border-bottom: 1px solid #d5d4d8;
+}
+
+/* custom length ranger */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 7px;
+  background: #d5d4d8;
+  border-radius: 5px;
+  background-image: linear-gradient(#10b981, #10b981);
+  background-size: 20% 100%;
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #4adf86;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }
