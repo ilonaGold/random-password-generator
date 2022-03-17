@@ -188,7 +188,7 @@ input:checked + .slider:before {
   border-bottom: 1px solid #d5d4d8;
 }
 
-/* custom length ranger */
+/* custom length range indicator */
 
 input[type="range"] {
   -webkit-appearance: none;
