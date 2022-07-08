@@ -5,50 +5,27 @@ let chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
              "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~", "!", "@",
              "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[",
              "]", "{", "}", "|", ";", ":", ",", ".", "/", "?"  
-            ]
+             ]
 
 const pwdLength = document.getElementById("pwd-length");
 const btn = document.getElementById("btn");
+let password = document.querySelectorAll('.password');
 
-const pwd1 = document.getElementById("password1");       
-const pwd2 = document.getElementById("password2");            
-const pwd3 = document.getElementById("password3");            
-const pwd4 = document.getElementById("password4"); 
-
-
-btn.addEventListener("click", generatePassword);
-
+btn.addEventListener("click", renderPassword);
 
 function generatePassword() {
-    pwd1.value = "";
-    pwd2.value = "";
-    pwd3.value = "";
-    pwd4.value = "";
-    
-    for (let i = 1; i <= pwdLength.value; i++) {
-    let ranNum =  Math.floor(Math.random() * chars.length);
-    let pass1 = pwd1.value += chars[ranNum];
-    pwd1.textContent = pass1;
+    password.value = "";
+    let pass;
+    for (let i = 0; i <= pwdLength.value; i++) {
+        let randChar =  Math.floor(Math.random() * chars.length);
+        pass = password.value += chars[randChar];
     }
+    return pass;
+} 
 
-    for (let i = 1; i <= pwdLength.value; i++) {
-    let ranNum =  Math.floor(Math.random() * chars.length);
-    let pass2 = pwd2.value += chars[ranNum];
-    pwd2.textContent = pass2;
-    }
-    
-    for (let i = 1; i <= pwdLength.value; i++) {
-    let ranNum =  Math.floor(Math.random() * chars.length);
-    let pass3 = pwd3.value += chars[ranNum];
-    pwd3.textContent = pass3;
-    }
-    
-    for (let i = 1; i <= pwdLength.value; i++) {
-    let ranNum =  Math.floor(Math.random() * chars.length);
-    let pass4 = pwd4.value += chars[ranNum];
-    pwd4.textContent = pass4;
-    }
-}    
+function renderPassword() {
+    password.forEach(pass => pass.textContent = generatePassword());
+}
 
 
 /* light theme */
@@ -103,6 +80,3 @@ function handleInputChange(e) {
   
   target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
 }
-
-
-
