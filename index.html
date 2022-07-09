@@ -5,75 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Password Generator | Scrimba JS Solo Project</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800&family=Karla:wght@800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800&family=Karla:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
   </head>
 
   <body>
     <div class="container">
-      <div class="toggler">
-        <label class="switch">
-          <input type="checkbox" class="toggle" id="toggle" />
-          <span class="slider round"></span>
-        </label>
-      </div>
-      <section class="password-generator">
-        <h1 class="title">
-          <span class="text-accent">Generate a</span><br /><span
-            class="text-green"
-            >random password</span
-          >
-        </h1>
-        <h2 class="subtitle">Never use an insecure password again.</h2>
-
-        <div class="generator-module flex">
-          <button id="btn">
-            <img src="images/bolt.png" /> Generate passwords
-          </button>
-          <div class="flex-right">
-            <div class="password-length">
-              <label for="length">Password length</label>
-              <input
-                type="range"
-                id="pwd-length"
-                value="10"
-                min="8"
-                max="20"
-                oninput="this.nextElementSibling.value = this.value"
-              />
-              <output type="number" class="num-char">10</output>
+        <div class="toggler">
+            <label class="switch">
+            <input type="checkbox" class="toggle" id="toggle"/>
+            <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <section class="generator-heading">
+            <h1 class="title"><span class="text-accent">Generate a</span><br><span class="text-green">random password</span></h1>
+            <h2 class="subtitle">Never use an insecure password again.</h2>
+            
+            <div class="generator-module flex">
+                <button class="btn btn-generate" id="btn-generate"><img src="images/bolt.png">  Generate passwords</button>
+                
+                <div class="password-filter">
+                    <div class="password-length">
+                        <label for="length">Password length</label>
+                        <input type="range" id="pwd-length" value="15" min="8" max="20"
+                        oninput="this.nextElementSibling.value = this.value">
+                        <output type="number" class="num-char">15</output>
+                    </div>
+                
+                    <div class="char-filter flex">
+                        <p class="char-filter-text">Only used:</p>
+                        <div class="char-filter-options flex">
+                            <label for="letters">
+                                <input type="checkbox" name="char-set" id="letters" value="letters" />
+                                aBc
+                            </label>
+                            <label for="numbers">
+                                <input type="checkbox" name="char-set" id="numbers" value="numbers" />
+                                123
+                            </label>
+                            <label for="symbols">
+                                <input type="checkbox" name="char-set" id="symbols" value="symbols" />
+                                #$%
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="to-clipboard">
-              <label for="clipboard">Save to clipboard</label>
-              <input type="checkbox" id="copy" name="clipboard" />
+        </section>
+        <section class="password-display flex">
+            <div class="flex-left">
+                <div class="password" id="password1"><img src="images/dots.png"></div>
+                <div class="password" id="password2"><img src="images/dots.png"></div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="password-display flex">
-        <div class="flex-left">
-          <div class="password" id="password1">
-            <img src="images/dots.png" />
-          </div>
-          <div class="password" id="password2">
-            <img src="images/dots.png" />
-          </div>
-        </div>
-        <div class="flex-right">
-          <div class="password" id="password3">
-            <img src="images/dots.png" />
-          </div>
-          <div class="password" id="password4">
-            <img src="images/dots.png" />
-          </div>
-        </div>
-      </section>
+            <div class="flex-right">
+                <div class="password" id="password3"><img src="images/dots.png"></div>
+                <div class="password" id="password4"><img src="images/dots.png"></div>
+            </div>
+        </section>
     </div>
-    <script src="script.js"></script>
-  </body>
+        <script src="script.js"></script>
+    </body>
 </html>
+
+
